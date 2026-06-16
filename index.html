@@ -273,11 +273,11 @@ article a:hover{text-decoration:underline}
 .stat{background:#fff;border:1px solid #DBEAFE;border-top:3px solid #1A56DB;border-radius:10px;padding:20px 14px;text-align:center;box-shadow:0 2px 10px rgba(26,86,219,.06)}
 .stat-n{font-family:"Sora",sans-serif;font-size:28px;font-weight:800;color:#1A56DB;display:block;letter-spacing:-0.02em}
 .stat-l{font-size:11px;color:#6B7280;margin-top:5px;text-transform:uppercase;letter-spacing:.07em;line-height:1.4}
-.cimg{margin:30px 0;border-radius:12px;border:1px solid #DBEAFE;box-shadow:0 4px 18px rgba(26,86,219,.07)}
-.cimg img{width:100%;height:auto;display:block;object-fit:contain;border-radius:12px 12px 0 0}
 
-.cimg figcaption{background:#EBF2FF;padding:10px 16px;font-size:12.5px;color:#1040B0;border-top:1px solid #DBEAFE;display:flex;gap:7px;align-items:flex-start}
-.cimg figcaption::before{content:"📸";flex-shrink:0}
+
+
+
+
 .clist{list-style:none;margin:16px 0 24px}
 .clist li{padding:12px 12px 12px 42px;background:#fff;border:1px solid #DBEAFE;border-top:none;position:relative;font-size:15px}
 .clist li:first-child{border-top:1px solid #DBEAFE;border-radius:8px 8px 0 0}
@@ -356,8 +356,8 @@ footer a:hover{color:#fff}
   .pw{padding:0 14px}
   .layout{grid-template-columns:1fr;gap:24px;padding:24px 0 48px}
   
-  .cimg img{height:auto !important;max-height:320px;object-fit:contain}
-  .cimg figcaption{font-size:11.5px;padding:8px 12px}
+  
+  
   
   article h2{font-size:20px;margin:32px 0 12px}
   article h3{font-size:16px}
@@ -396,8 +396,49 @@ footer a:hover{color:#fff}
 
 @media(max-width:400px){
   .hero h1{font-size:19px}
-  .cimg img{max-height:240px}
+  
   .nav-logo{font-size:16px}
+}
+
+
+/* IMAGE SECTION - NO ZOOM NO HIDDEN NO CROP */
+.cimg {
+  margin: 28px 0;
+  border-radius: 12px;
+  border: 1px solid #DBEAFE;
+  box-shadow: 0 2px 12px rgba(26,86,219,.06);
+  background: #f8faff;
+}
+.cimg img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  transform: none !important;
+  transition: none !important;
+  overflow: visible !important;
+  object-fit: fill;
+}
+.cimg figcaption {
+  background: #EBF2FF;
+  padding: 10px 16px;
+  font-size: 12.5px;
+  color: #1040B0;
+  border-top: 1px solid #DBEAFE;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+.cimg figcaption::before {
+  content: "📸";
+  flex-shrink: 0;
+}
+@media(max-width:768px){
+  .cimg { margin: 20px 0; border-radius: 10px; }
+  .cimg img { border-radius: 10px 10px 0 0; }
+  .cimg figcaption { font-size: 11.5px; padding: 8px 12px; }
 }
 
 </style>
