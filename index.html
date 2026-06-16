@@ -230,217 +230,209 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#F8FAFF;color:#374151;font-family:"Inter",sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;width:100%}
+body{background:#F8FAFF;color:#374151;font-family:"Inter",sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;width:100%;position:relative}
 img{max-width:100%;height:auto;display:block}
-.nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #DBEAFE;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px;box-shadow:0 1px 8px rgba(26,86,219,.07)}
-.nav-logo{font-family:"Sora",sans-serif;font-size:18px;font-weight:800;color:#1A56DB;text-decoration:none;letter-spacing:-0.02em}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #DBEAFE;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px;box-shadow:0 1px 8px rgba(26,86,219,.07);width:100%}
+.nav-logo{font-family:"Sora",sans-serif;font-size:18px;font-weight:800;color:#1A56DB;text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
 .nav-logo span{color:#0F2057}
-.nav-links{display:flex;align-items:center;gap:24px}
-.nav-links a{font-size:13px;font-weight:500;color:#6B7280;text-decoration:none;transition:color .2s}
-.nav-links a:hover{color:#1A56DB}
-.nav-cta{background:#1A56DB;color:#fff !important;font-size:12px !important;font-weight:700 !important;padding:9px 18px !important;border-radius:6px;white-space:nowrap}
-.nav-cta:hover{background:#1040B0 !important}
-@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}.nav{padding:0 16px}}
-.bc{max-width:1120px;margin:0 auto;padding:12px 24px;font-size:12px;color:#9CA3AF;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.nav-links{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.nav-links a{font-size:13px;font-weight:500;color:#6B7280;text-decoration:none}
+.nav-cta{background:#1A56DB;color:#fff !important;font-size:12px !important;font-weight:700 !important;padding:8px 16px !important;border-radius:6px;white-space:nowrap}
+
+/* BREADCRUMB */
+.bc{max-width:1120px;margin:0 auto;padding:10px 20px;font-size:12px;color:#9CA3AF;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
 .bc a{color:#1A56DB;text-decoration:none}
 .bc-sep{color:#CBD5E1}
-.hero{background:linear-gradient(135deg,#0F2057 0%,#1A56DB 55%,#3B82F6 100%);padding:56px 24px 52px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
-.hero::after{content:"";position:absolute;bottom:-120px;left:25%;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,.03);pointer-events:none}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0F2057 0%,#1A56DB 55%,#3B82F6 100%);padding:48px 20px 44px;position:relative;width:100%}
 .hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:#E0EAFF;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 15px;border-radius:100px;margin-bottom:20px}
-.hero h1{font-family:"Sora",sans-serif;font-size:clamp(24px,5vw,46px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-0.02em;margin-bottom:16px}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:#E0EAFF;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.hero h1{font-family:"Sora",sans-serif;font-size:clamp(22px,4.5vw,44px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-0.02em;margin-bottom:14px;word-wrap:break-word}
 .hero h1 em{color:#93C5FD;font-style:normal}
-.hero-sub{font-size:clamp(14px,2vw,16px);color:#BFDBFE;max-width:600px;margin-bottom:24px;line-height:1.7}
-.hero-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:#93C5FD}
+.hero-sub{font-size:clamp(14px,2vw,16px);color:#BFDBFE;max-width:600px;margin-bottom:20px;line-height:1.7}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#93C5FD}
 .hero-meta span{display:flex;align-items:center;gap:4px}
-.pw{max-width:1120px;margin:0 auto;padding:0 24px}
-.layout{display:grid;grid-template-columns:1fr 290px;gap:48px;padding:48px 0 80px;align-items:start}
-@media(max-width:900px){.layout{grid-template-columns:1fr;gap:32px;padding:32px 0 60px}}
-article h2{font-family:"Sora",sans-serif;font-size:clamp(20px,3vw,26px);font-weight:700;color:#0F172A;margin:48px 0 14px;line-height:1.28;letter-spacing:-0.01em}
+
+/* PAGE WRAP */
+.pw{max-width:1120px;margin:0 auto;padding:0 20px;width:100%}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:1fr 280px;gap:40px;padding:40px 0 72px;align-items:start;width:100%}
+
+/* ARTICLE */
+article{min-width:0;width:100%;word-wrap:break-word;overflow-wrap:break-word}
+article h2{font-family:"Sora",sans-serif;font-size:clamp(19px,2.8vw,25px);font-weight:700;color:#0F172A;margin:44px 0 13px;line-height:1.28;letter-spacing:-0.01em;word-wrap:break-word}
 article h2:first-of-type{margin-top:0}
-article h2::before{content:"";display:block;width:36px;height:3px;background:#1A56DB;border-radius:2px;margin-bottom:12px}
-article h3{font-family:"Sora",sans-serif;font-size:18px;font-weight:600;color:#0F172A;margin:28px 0 10px}
-article p{margin-bottom:18px;color:#374151;font-size:15.5px}
+article h2::before{content:"";display:block;width:34px;height:3px;background:#1A56DB;border-radius:2px;margin-bottom:11px}
+article h3{font-family:"Sora",sans-serif;font-size:17px;font-weight:600;color:#0F172A;margin:26px 0 9px}
+article p{margin-bottom:16px;color:#374151;font-size:15px;word-wrap:break-word}
 article strong{color:#0F172A;font-weight:600}
 article a{color:#1A56DB;text-decoration:none}
 article a:hover{text-decoration:underline}
-.hbox{border-left:4px solid #1A56DB;background:#EBF2FF;padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0}
-.hbox p{margin:0;font-style:italic;color:#1040B0;font-size:16px;font-weight:500}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}
-@media(max-width:540px){.stats{grid-template-columns:1fr}}
-.stat{background:#fff;border:1px solid #DBEAFE;border-top:3px solid #1A56DB;border-radius:10px;padding:20px 14px;text-align:center;box-shadow:0 2px 10px rgba(26,86,219,.06)}
-.stat-n{font-family:"Sora",sans-serif;font-size:28px;font-weight:800;color:#1A56DB;display:block;letter-spacing:-0.02em}
-.stat-l{font-size:11px;color:#6B7280;margin-top:5px;text-transform:uppercase;letter-spacing:.07em;line-height:1.4}
 
+/* HIGHLIGHT BOX */
+.hbox{border-left:4px solid #1A56DB;background:#EBF2FF;padding:16px 20px;margin:22px 0;border-radius:0 8px 8px 0}
+.hbox p{margin:0;font-style:italic;color:#1040B0;font-size:15px;font-weight:500}
 
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.stat{background:#fff;border:1px solid #DBEAFE;border-top:3px solid #1A56DB;border-radius:10px;padding:18px 12px;text-align:center;box-shadow:0 2px 10px rgba(26,86,219,.06)}
+.stat-n{font-family:"Sora",sans-serif;font-size:26px;font-weight:800;color:#1A56DB;display:block;letter-spacing:-0.02em}
+.stat-l{font-size:11px;color:#6B7280;margin-top:4px;text-transform:uppercase;letter-spacing:.06em;line-height:1.4}
 
+/* IMAGES - NO ZOOM NO CROP NO HIDDEN */
+.cimg{margin:26px 0;border-radius:12px;border:1px solid #DBEAFE;box-shadow:0 2px 12px rgba(26,86,219,.06);background:#f8faff;width:100%}
+.cimg img{width:100%;height:auto;display:block;border-radius:12px 12px 0 0;transform:none;transition:none;object-fit:fill}
+.cimg figcaption{background:#EBF2FF;padding:9px 14px;font-size:12px;color:#1040B0;border-top:1px solid #DBEAFE;border-radius:0 0 12px 12px;display:flex;gap:6px;align-items:flex-start;line-height:1.5;word-wrap:break-word}
+.cimg figcaption::before{content:"📸";flex-shrink:0}
 
-
-.clist{list-style:none;margin:16px 0 24px}
-.clist li{padding:12px 12px 12px 42px;background:#fff;border:1px solid #DBEAFE;border-top:none;position:relative;font-size:15px}
+/* CHECKLIST */
+.clist{list-style:none;margin:14px 0 22px;width:100%}
+.clist li{padding:11px 11px 11px 40px;background:#fff;border:1px solid #DBEAFE;border-top:none;position:relative;font-size:14.5px;word-wrap:break-word}
 .clist li:first-child{border-top:1px solid #DBEAFE;border-radius:8px 8px 0 0}
 .clist li:last-child{border-radius:0 0 8px 8px}
-.clist li::before{content:"✓";position:absolute;left:12px;top:14px;background:#1A56DB;color:#fff;width:20px;height:20px;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700}
-.twrap{overflow-x:auto;margin:24px 0;border-radius:10px;border:1px solid #DBEAFE;-webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}
+.clist li::before{content:"✓";position:absolute;left:11px;top:13px;background:#1A56DB;color:#fff;width:19px;height:19px;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+
+/* TABLE */
+.twrap{overflow-x:auto;margin:20px 0;border-radius:10px;border:1px solid #DBEAFE;-webkit-overflow-scrolling:touch;width:100%}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:380px}
 thead tr{background:#1A56DB}
-thead th{padding:13px 16px;text-align:left;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:700}
+thead th{padding:12px 14px;text-align:left;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
 tbody tr{border-bottom:1px solid #DBEAFE}
 tbody tr:last-child{border:none}
 tbody tr:nth-child(even){background:#EBF2FF}
-tbody tr:hover{background:#DBEAFE}
-td{padding:12px 16px;vertical-align:top;color:#374151}
+td{padding:11px 14px;vertical-align:top;color:#374151;word-wrap:break-word}
 td:first-child{font-weight:600;color:#0F172A}
 .win{color:#059669;font-weight:600}
 .lose{color:#DC2626}
 .kw-table thead{background:#0F2057}
-.mcta{background:linear-gradient(135deg,#0F2057 0%,#1A56DB 100%);border-radius:14px;padding:36px 28px;text-align:center;margin:40px 0;position:relative;overflow:hidden}
-.mcta::before{content:"";position:absolute;top:-40px;right:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.05)}
-.mcta h3{font-family:"Sora",sans-serif;font-size:clamp(18px,3vw,22px);font-weight:700;color:#fff;margin-bottom:8px;position:relative}
-.mcta p{color:#BFDBFE;font-size:14px;margin-bottom:22px;position:relative}
-.mcta a{display:inline-block;background:#fff;color:#1A56DB !important;font-weight:700;font-size:13px;padding:13px 30px;border-radius:8px;text-decoration:none !important;transition:background .2s,transform .2s;position:relative}
-.mcta a:hover{background:#EBF2FF;transform:translateY(-1px)}
-.faq-item{border:1px solid #DBEAFE;border-radius:10px;margin-bottom:10px;overflow:hidden;background:#fff}
-.faq-q{font-family:"Sora",sans-serif;font-size:15px;font-weight:600;color:#0F172A;cursor:pointer;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:background .2s;line-height:1.4}
+
+/* MID CTA */
+.mcta{background:linear-gradient(135deg,#0F2057 0%,#1A56DB 100%);border-radius:12px;padding:32px 24px;text-align:center;margin:36px 0;width:100%}
+.mcta h3{font-family:"Sora",sans-serif;font-size:clamp(17px,2.8vw,21px);font-weight:700;color:#fff;margin-bottom:8px}
+.mcta p{color:#BFDBFE;font-size:14px;margin-bottom:20px}
+.mcta a{display:inline-block;background:#fff;color:#1A56DB !important;font-weight:700;font-size:13px;padding:12px 28px;border-radius:8px;text-decoration:none !important}
+
+/* FAQ */
+.faq-item{border:1px solid #DBEAFE;border-radius:10px;margin-bottom:10px;background:#fff;width:100%}
+.faq-q{font-family:"Sora",sans-serif;font-size:14.5px;font-weight:600;color:#0F172A;cursor:pointer;padding:15px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;line-height:1.4;word-wrap:break-word}
 .faq-q:hover{background:#EBF2FF}
-.faq-icon{background:#EBF2FF;color:#1A56DB;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:300;flex-shrink:0;transition:background .2s}
+.faq-icon{background:#EBF2FF;color:#1A56DB;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:300;flex-shrink:0}
 .faq-item.open .faq-icon{background:#1A56DB;color:#fff}
 .faq-item.open .faq-q{background:#EBF2FF}
-.faq-a{display:none;padding:14px 18px 18px;font-size:14.5px;color:#374151;border-top:1px solid #DBEAFE}
+.faq-a{display:none;padding:13px 16px 16px;font-size:14px;color:#374151;border-top:1px solid #DBEAFE;word-wrap:break-word}
 .faq-item.open .faq-a{display:block}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:32px 0 56px}
-.tag{background:#EBF2FF;border:1px solid #DBEAFE;color:#1A56DB;font-size:12px;font-weight:500;padding:5px 14px;border-radius:100px;text-decoration:none;transition:background .2s}
-.tag:hover{background:#DBEAFE}
-.sidebar{position:sticky;top:76px}
-@media(max-width:900px){.sidebar{position:static}}
-.sw{background:#fff;border:1px solid #DBEAFE;border-radius:12px;padding:20px 18px;margin-bottom:18px}
-.sw h4{font-family:"Sora",sans-serif;font-size:13px;font-weight:700;color:#0F172A;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #EBF2FF;text-transform:uppercase;letter-spacing:.05em}
-.sw-audit{background:linear-gradient(135deg,#0F2057 0%,#1A56DB 100%);border-radius:12px;padding:24px 18px;margin-bottom:18px;text-align:center}
-.sw-audit-emoji{font-size:28px;margin-bottom:10px}
-.sw-audit h4{font-family:"Sora",sans-serif;font-size:17px;color:#fff;margin-bottom:6px;border:none;padding:0;text-transform:none;letter-spacing:0}
-.sw-audit p{font-size:12.5px;color:#BFDBFE;margin-bottom:16px;line-height:1.6}
-.sw-audit a{display:block;background:#fff;color:#1A56DB !important;font-size:12.5px;font-weight:700;padding:11px;border-radius:7px;text-decoration:none !important;transition:background .2s}
-.sw-audit a:hover{background:#EBF2FF}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:28px 0 48px}
+.tag{background:#EBF2FF;border:1px solid #DBEAFE;color:#1A56DB;font-size:12px;font-weight:500;padding:5px 13px;border-radius:100px;text-decoration:none}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:76px;min-width:0;width:100%}
+.sw{background:#fff;border:1px solid #DBEAFE;border-radius:12px;padding:18px 16px;margin-bottom:16px;width:100%;word-wrap:break-word}
+.sw h4{font-family:"Sora",sans-serif;font-size:12px;font-weight:700;color:#0F172A;margin-bottom:12px;padding-bottom:9px;border-bottom:2px solid #EBF2FF;text-transform:uppercase;letter-spacing:.05em}
+.sw-audit{background:linear-gradient(135deg,#0F2057 0%,#1A56DB 100%);border-radius:12px;padding:22px 16px;margin-bottom:16px;text-align:center;width:100%}
+.sw-audit-emoji{font-size:26px;margin-bottom:9px}
+.sw-audit h4{font-family:"Sora",sans-serif;font-size:16px;color:#fff;margin-bottom:5px;border:none;padding:0;text-transform:none;letter-spacing:0}
+.sw-audit p{font-size:12px;color:#BFDBFE;margin-bottom:14px;line-height:1.6}
+.sw-audit a{display:block;background:#fff;color:#1A56DB !important;font-size:12px;font-weight:700;padding:10px;border-radius:7px;text-decoration:none !important}
 .toc-list{list-style:none}
-.toc-list li{padding:6px 0;border-bottom:1px solid #F3F4F6}
+.toc-list li{padding:5px 0;border-bottom:1px solid #F3F4F6}
 .toc-list li:last-child{border:none;padding-bottom:0}
-.toc-list a{color:#374151;text-decoration:none;font-size:13px;display:flex;align-items:center;gap:7px;transition:color .2s}
-.toc-list a:hover{color:#1A56DB}
-.toc-num{background:#EBF2FF;color:#1A56DB;font-size:9px;font-weight:700;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.data-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #F3F4F6;font-size:12.5px}
+.toc-list a{color:#374151;text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;word-wrap:break-word}
+.toc-num{background:#EBF2FF;color:#1A56DB;font-size:9px;font-weight:700;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.data-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #F3F4F6;font-size:12px;gap:8px}
 .data-row:last-child{border:none;padding-bottom:0}
 .data-row .lbl{color:#6B7280}
-.data-row .val{font-weight:600;color:#1A56DB}
-.data-row .val-r{font-weight:600;color:#DC2626}
+.data-row .val{font-weight:600;color:#1A56DB;text-align:right}
+.data-row .val-r{font-weight:600;color:#DC2626;text-align:right}
 .svc-list{list-style:none}
-.svc-list li{padding:7px 0;border-bottom:1px solid #F3F4F6}
+.svc-list li{padding:6px 0;border-bottom:1px solid #F3F4F6}
 .svc-list li:last-child{border:none;padding-bottom:0}
-.svc-list a{color:#374151;text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;transition:color .2s}
+.svc-list a{color:#374151;text-decoration:none;font-size:13px;display:flex;align-items:center;gap:5px;word-wrap:break-word}
 .svc-list a::before{content:"→";color:#1A56DB;font-weight:700;flex-shrink:0}
-.svc-list a:hover{color:#1A56DB}
-footer{background:#0F2057;text-align:center;padding:32px 24px;font-size:12.5px;color:#93C5FD}
+
+/* FOOTER */
+footer{background:#0F2057;text-align:center;padding:28px 20px;font-size:12px;color:#93C5FD;width:100%}
 .ft-logo{font-family:"Sora",sans-serif;font-size:20px;font-weight:800;color:#fff;margin-bottom:8px}
 footer a{color:#BFDBFE;text-decoration:none}
-footer a:hover{color:#fff}
 
-/* ===== MOBILE RESPONSIVE IMPROVEMENTS ===== */
-@media(max-width:768px){
-  .hero{padding:36px 16px 32px}
-  .hero h1{font-size:22px;line-height:1.2}
-  .hero-sub{font-size:14px}
-  .hero-meta{gap:10px;font-size:11px}
-  .hero-badge{font-size:10px;padding:4px 12px}
-  
-  .pw{padding:0 14px}
-  .layout{grid-template-columns:1fr;gap:24px;padding:24px 0 48px}
-  
-  
-  
-  
-  article h2{font-size:20px;margin:32px 0 12px}
-  article h3{font-size:16px}
-  article p{font-size:14.5px}
-  
-  .stats{grid-template-columns:1fr !important;gap:10px}
-  .stat-n{font-size:24px}
-  
-  .hbox{padding:14px 16px}
-  .hbox p{font-size:14.5px}
-  
-  .clist li{font-size:14px;padding:10px 10px 10px 38px}
-  
-  .mcta{padding:24px 16px;margin:28px 0}
-  .mcta h3{font-size:17px}
-  .mcta p{font-size:13px}
-  .mcta a{padding:11px 22px;font-size:13px}
-  
-  .twrap{margin:16px 0}
-  table{font-size:12.5px}
-  td,thead th{padding:9px 10px}
-  
-  .faq-q{font-size:13.5px;padding:13px 14px}
-  .faq-a{font-size:13.5px;padding:12px 14px 14px}
-  
-  .tags{gap:6px;margin:24px 0 40px}
-  .tag{font-size:11px;padding:4px 11px}
-  
-  .sw-audit{padding:20px 14px}
-  .sw{padding:16px 14px}
-  
-  .bc{padding:10px 14px;font-size:11px}
-  
-  footer{padding:24px 16px;font-size:12px}
+/* ═══ MOBILE RESPONSIVE ═══ */
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:28px;padding:28px 0 52px}
+  .sidebar{position:static;top:auto}
 }
 
-@media(max-width:400px){
-  .hero h1{font-size:19px}
-  
+@media(max-width:640px){
+  .nav{padding:0 14px;height:56px}
   .nav-logo{font-size:16px}
+  .nav-links a:not(.nav-cta){display:none}
+  .nav-cta{padding:7px 14px !important;font-size:11px !important}
+
+  .hero{padding:32px 14px 28px}
+  .hero-badge{font-size:10px;padding:4px 11px;margin-bottom:14px}
+  .hero-sub{font-size:13.5px;margin-bottom:16px}
+  .hero-meta{gap:8px;font-size:11px}
+
+  .pw{padding:0 14px}
+  .bc{padding:8px 14px;font-size:11px}
+
+  article h2{font-size:18px;margin:32px 0 11px}
+  article p{font-size:14px}
+  .hbox{padding:13px 15px}
+  .hbox p{font-size:14px}
+
+  .stats{grid-template-columns:1fr;gap:9px}
+  .stat-n{font-size:22px}
+  .stat-l{font-size:10.5px}
+
+  .cimg{margin:18px 0;border-radius:10px}
+  .cimg img{border-radius:10px 10px 0 0}
+  .cimg figcaption{font-size:11px;padding:8px 11px}
+
+  .clist li{font-size:13.5px;padding:10px 10px 10px 36px}
+  .clist li::before{left:10px;top:12px;width:17px;height:17px;font-size:9px}
+
+  .twrap{margin:14px 0;border-radius:8px}
+  table{font-size:12px}
+  td,thead th{padding:8px 10px}
+
+  .mcta{padding:22px 16px;margin:26px 0;border-radius:10px}
+  .mcta h3{font-size:16px}
+  .mcta p{font-size:13px;margin-bottom:16px}
+  .mcta a{padding:11px 22px;font-size:12.5px}
+
+  .faq-q{font-size:13.5px;padding:13px 14px}
+  .faq-a{font-size:13px;padding:11px 14px 14px}
+  .faq-icon{width:22px;height:22px;font-size:14px}
+
+  .tags{gap:6px;margin:22px 0 36px}
+  .tag{font-size:11px;padding:4px 11px}
+
+  .sw{padding:14px 13px}
+  .sw-audit{padding:18px 13px}
+  .sw-audit h4{font-size:15px}
+  .toc-list a{font-size:12px}
+  .data-row{font-size:11.5px}
+  .svc-list a{font-size:12px}
+
+  footer{padding:20px 14px;font-size:11.5px}
+  .ft-logo{font-size:18px}
 }
 
-
-/* IMAGE SECTION - NO ZOOM NO HIDDEN NO CROP */
-.cimg {
-  margin: 28px 0;
-  border-radius: 12px;
-  border: 1px solid #DBEAFE;
-  box-shadow: 0 2px 12px rgba(26,86,219,.06);
-  background: #f8faff;
+@media(max-width:380px){
+  .hero h1{font-size:20px}
+  article h2{font-size:17px}
+  .stats{gap:8px}
+  .stat{padding:14px 10px}
+  .stat-n{font-size:20px}
+  table{font-size:11px}
+  td,thead th{padding:7px 8px}
 }
-.cimg img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px 12px 0 0;
-  transform: none !important;
-  transition: none !important;
-  overflow: visible !important;
-  object-fit: fill;
-}
-.cimg figcaption {
-  background: #EBF2FF;
-  padding: 10px 16px;
-  font-size: 12.5px;
-  color: #1040B0;
-  border-top: 1px solid #DBEAFE;
-  border-radius: 0 0 12px 12px;
-  display: flex;
-  gap: 7px;
-  align-items: flex-start;
-  line-height: 1.5;
-}
-.cimg figcaption::before {
-  content: "📸";
-  flex-shrink: 0;
-}
-@media(max-width:768px){
-  .cimg { margin: 20px 0; border-radius: 10px; }
-  .cimg img { border-radius: 10px 10px 0 0; }
-  .cimg figcaption { font-size: 11.5px; padding: 8px 12px; }
-}
-
 </style>
 </head>
 <body>
@@ -497,7 +489,7 @@ footer a:hover{color:#fff}
 <div class="hbox"><p>"The difference between a ₹200 CPC and a ₹22 CPC is almost never the budget. It's almost always the keyword strategy and Quality Score."</p></div>
 
 <figure class="cimg">
-  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/48eb6693c2bdd158e488340c7d8a3b53.jpg" alt="Google Ads Management dashboard — professional marketer managing Google Ads campaigns for Ajmer local businesses" width="900" height="420"/ loading="eager" fetchpriority="high" decoding="async">
+  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/48eb6693c2bdd158e488340c7d8a3b53.jpg" alt="Google Ads Management dashboard — professional marketer managing Google Ads campaigns for Ajmer local businesses" width="900" height="420" loading="eager" fetchpriority="high" decoding="async">
   <figcaption>Jab koi Ajmer mein "architect near me" ya "steel supplier Ajmer" type karta hai — woh call karne ke liye ready hota hai. Google Ads aapko sabse pehle unke saamne rakhta hai.</figcaption>
 </figure>
 
@@ -514,7 +506,7 @@ footer a:hover{color:#fff}
 <p>Before we talk about what works, let's talk about what's silently costing you money right now. These five mistakes are responsible for most wasted Google Ads spend in the Ajmer market.</p>
 
 <figure class="cimg">
-  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/4114bc349d06a8c1144a8ddb1024bf50.jpg" alt="Business team reviewing Google Ads budget analytics — identifying wasted ad spend mistakes made by Ajmer local businesses" width="900" height="420"/ loading="lazy" decoding="async">
+  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/4114bc349d06a8c1144a8ddb1024bf50.jpg" alt="Business team reviewing Google Ads budget analytics — identifying wasted ad spend mistakes made by Ajmer local businesses" width="900" height="420" loading="lazy" decoding="async">
   <figcaption>Galat keyword targeting aur poor campaign setup sabse bada reason hai kyun Ajmer ke local businesses apna Google Ads budget waste kar dete hain — bina koi ROI ke.</figcaption>
 </figure>
 
@@ -537,7 +529,7 @@ footer a:hover{color:#fff}
 <p>This is the question we hear most from traders and startups. The honest answer: <strong>they serve completely different purposes.</strong> For most local Ajmer businesses chasing leads right now, Google Ads wins.</p>
 
 <figure class="cimg">
-  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/b0fd5b69aa0d68c98723693977a396fc.jpg" alt="Google Ads vs Meta Ads performance comparison — platform analysis for Ajmer local business lead generation" width="900" height="420"/ loading="lazy" decoding="async">
+  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/b0fd5b69aa0d68c98723693977a396fc.jpg" alt="Google Ads vs Meta Ads performance comparison — platform analysis for Ajmer local business lead generation" width="900" height="420" loading="lazy" decoding="async">
   <figcaption>Google Ads pehle se maujood demand ko capture karta hai. Meta Ads demand create karta hai. Ajmer ke traders aur service businesses ke liye, lead quality mein Google Ads har baar jeetta hai.</figcaption>
 </figure>
 
@@ -563,7 +555,7 @@ footer a:hover{color:#fff}
 <p>Keyword research is where most Ajmer businesses either win or lose. Below are real keyword categories — by industry — that consistently drive qualified leads in this market at the lowest possible CPC.</p>
 
 <figure class="cimg">
-  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/39e6214125f033e68e8cd281c18e74d9.jpg" alt="Digital marketing team doing Google Ads keyword research — keyword strategy for Ajmer local business PPC campaigns" width="900" height="420"/ loading="lazy" decoding="async">
+  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/39e6214125f033e68e8cd281c18e74d9.jpg" alt="Digital marketing team doing Google Ads keyword research — keyword strategy for Ajmer local business PPC campaigns" width="900" height="420" loading="lazy" decoding="async">
   <figcaption>Sahi keywords = sahi customers. Ajmer mein local search intent keywords sirf ₹8–₹18 per click par milti hain — jab exact match aur proper targeting ke saath setup karo.</figcaption>
 </figure>
 
@@ -586,7 +578,7 @@ footer a:hover{color:#fff}
 <p>CPC is not just set by your bid — Google's auction rewards relevance. Here's the fastest way to lower your cost per click without reducing your bids:</p>
 
 <figure class="cimg">
-  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/3e8d8cdf908965b233940445d153dbcf.jpg" alt="Google Ads CPC optimization dashboard — performance results for Ajmer PPC campaigns" width="900" height="420"/ loading="lazy" decoding="async">
+  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/3e8d8cdf908965b233940445d153dbcf.jpg" alt="Google Ads CPC optimization dashboard — performance results for Ajmer PPC campaigns" width="900" height="420" loading="lazy" decoding="async">
   <figcaption>Ek well-optimized Google Ads campaign time ke saath sasta aur zyada effective hota jaata hai — jabki poorly set-up campaign har roz paise burn karti rehti hai.</figcaption>
 </figure>
 
@@ -603,7 +595,7 @@ footer a:hover{color:#fff}
 <p>Getting the click is only half the battle. Your lead form is where money turns into actual business. Here's what separates a 3% conversion rate from an 18% one:</p>
 
 <figure class="cimg">
-  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/28d4713adb87e199761ae66325e6d5db.jpg" alt="Google Ads FAQ consultation — expert discussing Google Ads management services and lead generation strategies for Ajmer businesses" width="900" height="420"/ loading="lazy" decoding="async">
+  <img itemprop="image" src="https://digitoria.in/wp-content/uploads/2026/06/28d4713adb87e199761ae66325e6d5db.jpg" alt="Google Ads FAQ consultation — expert discussing Google Ads management services and lead generation strategies for Ajmer businesses" width="900" height="420" loading="lazy" decoding="async">
   <figcaption>Ajmer ke 74% local searches mobile par hote hain. Agar aapka lead form phone users ke liye optimize nahi hai, toh aap apne aadhe se zyada potential leads pehle touch point pe hi kho rahe hain.</figcaption>
 </figure>
 
